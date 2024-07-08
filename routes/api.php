@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\EmployeeController;
 
 Route::get('/get_all_invoice',[InvoiceController::class,'getAllInvoices']);
 Route::get('/search_invoice',[InvoiceController::class,'searchInvoice']);
@@ -17,3 +18,7 @@ Route::get('/edit_invoice/{id}',[InvoiceController::class,'editInvoice']);
 Route::get('/delete_invoice_items/{id}',[InvoiceController::class,'deleteInvoiceItems']);
 Route::post('/update_invoice/{id}',[InvoiceController::class,'updateInvoice']);
 Route::get('/delete_invoice/{id}',[InvoiceController::class,'deleteInvoice']);
+
+// test employee
+Route::get('/employee/search',[EmployeeController::class,'searchEmployee']);
+Route::apiResource('/employee', EmployeeController::class);
