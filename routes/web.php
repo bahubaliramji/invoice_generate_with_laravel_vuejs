@@ -7,6 +7,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/facade-test', function () {
+    $date = DateClass::detaFormateYMD('10/20/2022');
+    return $date;
+    dd("Hello there");
+});
+
 Route::get('/new',[TestController::class,'index']);
 Route::get('/send-email',[TestController::class,'sendMail']);
 
